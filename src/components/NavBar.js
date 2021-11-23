@@ -1,6 +1,6 @@
 import { animate, stagger, timeline } from "motion";
 import React, { useState, useEffect } from "react";
-
+import CustomColors from "../utils/Customcolors";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -65,7 +65,7 @@ const NavBar = () => {
       animate(
         ".block-box",
         {
-          backgroundColor: "#fc575e",
+          backgroundColor: CustomColors.blush,
           boxShadow: "10px 10px 20px rgba(0,0,0,.3)",
         },
         { duration: 0.5 }
@@ -102,7 +102,7 @@ const NavBar = () => {
             {
               easing: [0.55, 0.085, 0.68, 0.53],
               delay: stagger(0.1, {}),
-              direction: "reverse"
+              direction: "reverse",
             },
           ],
           [
@@ -121,7 +121,7 @@ const NavBar = () => {
   }, [isOpen]);
 
   return (
-    <nav className={`h-screen w-screen`}>
+    <nav className="z-50 h-screen w-screen absolute top-0 left-0 right-0 bottom-0">
       <button
         className="z-20 block-box fixed top-9 right-9 space-y-1 rounded-full w-16 h-16 bg-black flex justify-center items-center flex-col"
         onClick={() => setIsOpen(!isOpen)}
@@ -131,7 +131,7 @@ const NavBar = () => {
         <div className="block3 w-7 h-0.5 bg-white"></div>
       </button>
       <div
-        className="nav-body p-16 md:p-18 flex justify-center flex-col items-start space-y-6 fixed top-0 right-0 h-full w-full md:w-2/6 bg-gradient-to-bl from-dv-red to-dv-blue"
+        className="nav-body p-16 md:p-18 flex justify-center flex-col items-start space-y-6 fixed top-0 right-0 h-full w-full md:w-2/6 bg-gradient-to-bl from-blush to-turquoise-blue"
         style={{ boxShadow: "-7px 0 20px rgba(10,10,10,.3)" }}
       >
         <NavBarButton id="0" name="About Me" />

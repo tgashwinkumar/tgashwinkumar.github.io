@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 5;
 }
 
 body {
@@ -20,11 +21,47 @@ code {
 }
 
 .font-gradient {
-  background-color: #fc575e;
-  background-image: linear-gradient(45deg, #fc575e, #90d5ec);
-  background-size: 100%;
+  /* background-size: 100%; */
+  height: fit-content;
+  background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+}
+
+.bg-radial-red {
+  background-image: radial-gradient(
+    rgb(229, 93, 135) 10%,
+    rgba(245, 245, 245, 0) 60%
+  );
+  position: absolute;
+  border-radius: 100%;
+  transform-origin: center;
+  z-index: 0;
+
+}
+
+.bg-radial-blue {
+  background-image: radial-gradient(
+    rgb(95, 195, 228) 10%,
+    rgba(245, 245, 245, 0) 60%
+  );
+  position: absolute;
+  border-radius: 100%;
+  transform-origin: center;
+  z-index: 0;
+}
+
+.radial-1{
+  width: 1800px;
+  height: 1800px;
+  top: -1167px;
+  left: -1098px;
+}
+
+.radial-2{
+  width: 1800px;
+  height: 1800px;
+  right: -1000px;
 }

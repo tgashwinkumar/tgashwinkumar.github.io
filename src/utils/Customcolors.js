@@ -1,0 +1,15 @@
+module.exports = {
+  "tyrian-purple": "#700030",
+  "vampire-fangs": "#D42259",
+  blush: "#e55d87",
+  "wild-orchid": "#cf6e97",
+  "opera-mauve": "#b87fa6",
+  "glossy-grape": "#a290b6",
+  "wild-blue-yonder": "#8ca1c5",
+  aero: "#75b3d5",
+  "blizzard-blue": "#A0DCEF",
+  "turquoise-blue": "#5fc3e4",
+  "summer-sky": "#24A7D3",
+  "congress-blue": "#004393",
+  whitesmoke: "#f5f5f5",
+};
