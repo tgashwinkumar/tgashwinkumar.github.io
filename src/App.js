@@ -19,10 +19,3 @@ function App() {
 }
 
 export default App;
-
-/*
-Pirandanaal Vaazhtukal Aadhi!!
-Thanks for that one month of offline college and full time of patting! 
-If you hadn't been there, I would missed a lot of fun and would have never realised drinking can be so much fun
-Buy me a lots of food and pat me more! <3
-*/
