@@ -1,113 +1,248 @@
-import Image from "next/image";
+import Link from "next/link";
+import { FaGithub, FaInstagram, FaLink, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <nav className="bg-white z-30 fixed px-28 flex items-center justify-between w-full space-x-2 py-2 pb-4">
+        <h1 className="font-poppins flex-1 font-extrabold text-3xl text-gray-800">
+          tgashwinkumar<span className="text-gray-600 text-5xl">.</span>{" "}
+        </h1>
+        <ul className="flex space-x-8">
+          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+            About
+          </li>
+          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+            Projects
+          </li>
+          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+            Publications
+          </li>
+          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+            Resume
+          </li>
+        </ul>
+        <div className="flex-1 flex items-center justify-end">
+          <button className="px-4 py-2 border rounded-md border-gray-600 text-gray-700 font-semibold">
+            Let's Chat
+          </button>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </nav>
+      <section className="font-raleway relative flex min-h-screen flex-col space-y-12 items-center px-24 bg-white">
+        <div className="h-8"></div>
+        <IntroSection />
+        <ProjectSection />
+        <PublicationsSection />
+        <ResumeSection />
+        <div className="h-12"></div>
+      </section>
+      <footer className="bg-gray-900 w-full px-24 py-8">
+        
+      </footer>
     </main>
   );
 }
+
+const IntroSection = () => {
+  return (
+    <div className="grid grid-cols-5 w-full gap-4">
+      <div className="col-span-3 bg-red-400 rounded-xl p-12 flex flex-col">
+        <p className="text-4xl font-bold font-sans text-black">
+          Hey, I'm Ashwin Kumar!
+        </p>
+        <p className="text-xl  text-gray-900 mt-8">
+          I'm a Full Stack Developer and AI enthusiast based in{" "}
+          <i>Madurai, India</i>. Driven by impact and adrenaline, I am always
+          looking for new opportunities to learn and grow. I have worked on
+          numerous projects and internships in the field of AI, Web Development
+          and Blockchain, and I intent to keep the streak going with much more
+          challenges.
+        </p>
+        <div className="flex-1"></div>
+        <div className="grid grid-cols-2 w-full">
+          <div className="">
+            <p className="text-lg text-gray-800">Phone number</p>
+            <p className="text-black text-lg font-semibold">+91 96596 04838</p>
+          </div>
+          <div className="">
+            <p className="text-lg text-gray-800">Email</p>
+            <p className="text-black text-lg font-semibold">
+              tgashwinkumar@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <p className="text-lg text-gray-800 py-4">You can also find me at</p>
+        <div className="flex space-x-4 items-center justify-start">
+          <FaLinkedin className="h-8 w-8 text-black" />
+          <FaGithub className="h-8 w-8 text-black" />
+          <FaInstagram className="h-8 w-8 text-black" />
+        </div>
+      </div>
+      <div className=" relative col-span-2 bg-blue-400 h-[36rem] [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)] rounded-xl flex items-end">
+        <div className="flex flex-col w-full items-center">
+          <p className="italic font-bold text-7xl opacity-100">
+            tgashwinkumar.
+          </p>
+          <p className="italic font-bold text-7xl opacity-90">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-80">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-70">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-60">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-50">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-40">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-30">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-20">tgashwinkumar.</p>
+          <p className="italic font-bold text-7xl opacity-10">tgashwinkumar.</p>
+        </div>
+        <img
+          src={"/me.png"}
+          className="absolute left-0 right-0 bottom-0 w-full h-auto filter grayscale drop-shadow-[-8px_0px_8px_rgba(96,_165,_250,_1)]"
+        />
+      </div>
+    </div>
+  );
+};
+
+const ProjectSection = () => {
+  return (
+    <div className="grid grid-cols-4 w-full gap-4 text-black">
+      <h1 className="text-6xl font-extrabold w-full py-4">Projects.</h1>
+      <ProjectCard color="#ffadad" title="Project 1" text="This is a project" />
+      <ProjectCard
+        color="#ffd6a5"
+        title="Project 2"
+        text="This is a project. This is a project. This is a project"
+      />
+      <ProjectCard color="#fdffb6" title="Project 3" text="This is a project" />
+      <ProjectCard color="#caffbf" title="Project 4" text="This is a project" />
+      <ProjectCard color="#9bf6ff" title="Project 5" text="This is a project" />
+    </div>
+  );
+};
+
+const ProjectCard = ({
+  color,
+  title,
+  text,
+  githubLink = "",
+  hrefLink = "aa",
+}) => {
+  return (
+    <div
+      style={{ background: `${color}` }}
+      className="w-full rounded-lg flex flex-col justify-between p-8"
+    >
+      <div className="">
+        <h1 className="text-2xl text-black font-bold">{title}</h1>
+        <h2 className="text text-gray-800">{text}</h2>
+      </div>
+      <div className="flex items-center space-x-2 mt-8">
+        <p className="text-sm">View it in </p>
+        <Link href={githubLink}>
+          <FaGithub className="h-6 w-6 text-black" />
+        </Link>
+        {hrefLink && (
+          <Link href={hrefLink}>
+            <FaLink className="h-6 w-6 text-black" />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const PublicationsSection = () => {
+  return (
+    <div className="w-full space-y-4">
+      <h1 className="text-6xl text-black font-extrabold w-full py-4 text-center ">
+        Publications.
+      </h1>
+      <div className="grid grid-cols-2 w-full space-x-4">
+        <div className="bg-slate-300 w-full min-h-40 rounded-lg p-8 flex flex-col justify-between">
+          <div className="">
+            <h1 className="text-2xl text-black font-bold">Publication 1</h1>
+            <h2 className="text text-gray-600 italic">
+              Lorem Ipsum Conference 2018
+            </h2>
+            <div className="mt-8 text-gray-800">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              ultricies, nisi ac mollis tincidunt, arcu odio tincidunt purus,
+              nec ultricies sapien odio sit amet libero. Nulla facilisi. Nulla
+            </div>
+          </div>
+          <button className="mt-12 text-black font-mono w-fit pb-1 border-b-black hover:border-b-2 border-dashed">
+            Download PDF
+          </button>
+        </div>
+        <div className="bg-slate-300 w-full min-h-40 rounded-lg p-8 flex flex-col justify-between">
+          <div className="">
+            <h1 className="text-2xl text-black font-bold">Publication 1</h1>
+            <h2 className="text text-gray-600 italic">
+              Lorem Ipsum Conference 2018
+            </h2>
+            <div className="mt-8 text-gray-800">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              ultricies, nisi ac mollis tincidunt, arcu odio tincidunt purus,
+              nec ultricies sapien odio sit amet libero. Nulla facilisi. Nulla
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              ultricies, nisi ac mollis tincidunt, arcu odio tincidunt purus,
+              nec ultricies sapien odio sit amet libero. Nulla facilisi. Nulla
+            </div>
+          </div>
+          <button className="mt-12 text-black font-mono w-fit pb-1 border-b-black hover:border-b-2 border-dashed">
+            Download PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ResumeSection = () => {
+  return (
+    <div className="relative rounded-lg bg-blue-300 text-black w-full p-8 flex items-center justify-between">
+      <div className="absolute h-full [background:linear-gradient(to_right,rgba(147,197,253,0)_0%,rgba(147,197,253,0.9)_20%,rgba(147,197,253,0.9)_80%,rgba(147,197,253,0)_100%)] w-full right-0"></div>
+      <div className="absolute w-full h-full space-x-6 flex flx-col items-center justify-center">
+        <h1 className="text-2xl font-bold">Get my resume </h1>
+        <button className="bg-white text-black font-semibold text-xl shadow-xl p-2 px-6 rounded-md">
+          Download
+        </button>
+      </div>
+      <div className="flex flex-wrap gap-y-2 gap-x-3 items-center justify-center w-full">
+        {[
+          "Python",
+          "C++",
+          "Java",
+          "Javascript",
+          "Typescript",
+          "Rust",
+          "Object Segmentation",
+          "Natural Language Processing",
+          "OpenCV",
+          "Flask",
+          "Pytorch",
+          "Flutter",
+          "NodeJS",
+          "ReactJS",
+          "Django",
+          "OpenGL",
+          "Git & Github",
+          "CMake",
+          "Figma",
+          "Research Formulation",
+          "Paper Drafting",
+          "Presentation Skills",
+          "Problem Solving",
+          "Agile Development",
+          "Leadership",
+          "Public Speaking",
+          "Documentation writing",
+        ].map((skill) => (
+          <div className="px-4 text-sm py-2 rounded-md bg-blue-500 text-white">
+            {skill}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
