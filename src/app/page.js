@@ -37,7 +37,7 @@ export default function Home() {
         <div className="h-12"></div>
       </section>
       <footer className="bg-gray-900 w-full px-24 py-8">
-        
+        @tgashwinkumar
       </footer>
     </main>
   );
