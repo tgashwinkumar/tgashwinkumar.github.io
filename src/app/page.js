@@ -229,9 +229,13 @@ const PublicationsSection = () => {
               better framework.
             </div>
           </div>
-          <button className="mt-12 text-black font-mono w-fit pb-1 border-b-black hover:border-b-2 border-dashed">
+          <Link
+            target="_blank"
+            href="/A Framework for Smart CSS.pdf"
+            className="mt-12 text-black font-mono w-fit pb-1 border-b-black hover:border-b-2 border-dashed"
+          >
             Download PDF
-          </button>
+          </Link>
         </div>
         <div className="bg-slate-300 w-full min-h-40 rounded-lg p-8 flex flex-col justify-between">
           <div className="">
@@ -261,9 +265,13 @@ const PublicationsSection = () => {
               confidence and precision.
             </div>
           </div>
-          <button className="box-border mt-12 text-black font-mono w-fit pb-1 hover:border-b-black hover:border-b-2 border-dashed">
+          <Link
+          target="_blank"
+            href="/Strike Price Recommendations for NIFTY 50 Index Options IEEE Paper - Unblinded.pdf"
+            className="box-border mt-12 text-black font-mono w-fit pb-1 hover:border-b-black hover:border-b-2 border-dashed"
+          >
             Download PDF
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -276,9 +284,11 @@ const ResumeSection = () => {
       <div className="absolute h-full [background:linear-gradient(to_right,rgba(147,197,253,0)_0%,rgba(147,197,253,0.9)_20%,rgba(147,197,253,0.9)_80%,rgba(147,197,253,0)_100%)] w-full right-0"></div>
       <div className="absolute w-full h-full space-x-6 flex flx-col items-center justify-center">
         <h1 className="text-2xl font-bold">Get my resume </h1>
-        <button className="bg-white text-black font-semibold text-xl shadow-xl p-2 px-6 rounded-md">
+        <Link
+        href="/Resume.pdf"
+         target="_blank" className="bg-white text-black font-semibold text-xl shadow-xl p-2 px-6 rounded-md">
           Download
-        </button>
+        </Link>
       </div>
       <div className="flex flex-wrap gap-y-2 gap-x-3 items-center justify-center w-full">
         {[
