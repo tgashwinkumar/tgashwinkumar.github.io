@@ -36,9 +36,7 @@ export default function Home() {
         <ResumeSection />
         <div className="h-12"></div>
       </section>
-      <footer className="bg-gray-900 w-full px-24 py-8">
-        @tgashwinkumar
-      </footer>
+      <footer className="bg-gray-900 w-full px-24 py-8 text-center">@tgashwinkumar - Last Updated: May 2024</footer>
     </main>
   );
 }
@@ -104,49 +102,100 @@ const IntroSection = () => {
 };
 
 const ProjectSection = () => {
+  const ColorsList = [
+    "#ffadad",
+    "#ffd6a5",
+    "#fdffb6",
+    "#caffbf",
+    "#9bf6ff",
+    "#a0c4ff",
+    "#bdb2ff",
+    "#ffc6ff",
+  ];
+
+  const ProjectsList = [
+    {
+      title: "ltransf",
+      text: "A Python library for Symbolic Laplace Transformations",
+      githubLink: "https://github.com/tgashwinkumar/ltransf",
+    },
+    {
+      title: "Basic Raytracer",
+      text: "Inspired by Peter Shirley's Raytracing in a Weekend, A raytracer written in C++",
+      githubLink: "https://github.com/tgashwinkumar/raytracer-basic",
+    },
+    {
+      title: "Spiel Game Engine",
+      text: " A C++ Library for building 2D Games with basic functionalities. ",
+      githubLink: "https://github.com/tgashwinkumar/spiel-sdk",
+    },
+    {
+      title: "cra-template-tailwindcss-react",
+      text: "A custom Create-react-app template that wraps TailwindCSS and PostCSS ",
+      githubLink:
+        "https://github.com/tgashwinkumar/cra-template-tailwindcss-react",
+      hrefLink: "https://www.npmjs.com/package/cra-template-tailwindcss-react",
+    },
+    {
+      title: "Kriya 2023",
+      text: "Official Website for Kriya 2023 - Annual Technical Symposium of PSG Tech",
+      githubLink: "https://github.com/jeyam03/kriya-frontend-sdk",
+      hrefLink: "https://kriya.psgtech.ac.in/",
+    },
+    {
+      title: "Best Outgoing Student Awards",
+      text: "Application portal for PSG Tech's Best Outgoing Student Awards",
+      githubLink: "https://github.com/PSG-BOGS/kooratalvar-website-sdk",
+      hrefLink: "https://bogs.psgtech.ac.in/",
+    },
+    {
+      title: "Research Conclave",
+      text: "Manuscript submission portal for PSG Tech's Research Conclave",
+      hrefLink: "https://manuscript.psgtech.ac.in/",
+    },
+    {
+      title: "ICAMM 2023",
+      text: "Official Conference Website for International Conferenceon Applied Mathematical Models",
+      githubLink: "https://github.com/tgashwinkumar/icamm2023-react-sdk",
+      hrefLink: "https://tgashwinkumar.github.io/icamm2023-react-sdk/",
+    },
+    {
+      title: "KMap Solver",
+      text: "A simple Java Library for handling Karnaugh Maps",
+      githubLink: "https://github.com/tgashwinkumar/kmap-solver",
+    }
+  ];
+
   return (
     <div className="grid grid-cols-4 w-full gap-4 text-black">
       <h1 className="text-6xl font-extrabold w-full py-4">Projects.</h1>
-      <ProjectCard color="#ffadad" title="Project 1" text="This is a project" />
-      <ProjectCard
-        color="#ffd6a5"
-        title="Project 2"
-        text="This is a project. This is a project. This is a project"
-      />
-      <ProjectCard color="#fdffb6" title="Project 3" text="This is a project" />
-      <ProjectCard color="#caffbf" title="Project 4" text="This is a project" />
-      <ProjectCard color="#9bf6ff" title="Project 5" text="This is a project" />
-    </div>
-  );
-};
+      {ProjectsList.map(({ title, text, githubLink, hrefLink }, index) => (
+        <div
+          style={{ background: `${ColorsList[index % ColorsList.length]}` }}
+          className="w-full rounded-lg flex flex-col justify-between p-8"
+        >
+          <div className="">
+            <h1 className="text-2xl text-black font-bold">{title}</h1>
+            <h2 className="text text-gray-800">{text}</h2>
+          </div>
 
-const ProjectCard = ({
-  color,
-  title,
-  text,
-  githubLink = "",
-  hrefLink = "aa",
-}) => {
-  return (
-    <div
-      style={{ background: `${color}` }}
-      className="w-full rounded-lg flex flex-col justify-between p-8"
-    >
-      <div className="">
-        <h1 className="text-2xl text-black font-bold">{title}</h1>
-        <h2 className="text text-gray-800">{text}</h2>
-      </div>
-      <div className="flex items-center space-x-2 mt-8">
-        <p className="text-sm">View it in </p>
-        <Link href={githubLink}>
-          <FaGithub className="h-6 w-6 text-black" />
-        </Link>
-        {hrefLink && (
-          <Link href={hrefLink}>
-            <FaLink className="h-6 w-6 text-black" />
-          </Link>
-        )}
-      </div>
+          {(githubLink || hrefLink) && (
+            <div className="flex items-center space-x-2 mt-8">
+              <p className="text-sm">View it in </p>
+              {githubLink && (
+                <Link href={githubLink}>
+                  <FaGithub className="h-6 w-6 text-black" />
+                </Link>
+              )}
+              {hrefLink && (
+                <Link href={hrefLink}>
+                  <FaLink className="h-6 w-6 text-black" />
+                </Link>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 };
@@ -160,14 +209,24 @@ const PublicationsSection = () => {
       <div className="grid grid-cols-2 w-full space-x-4">
         <div className="bg-slate-300 w-full min-h-40 rounded-lg p-8 flex flex-col justify-between">
           <div className="">
-            <h1 className="text-2xl text-black font-bold">Publication 1</h1>
+            <h1 className="text-2xl text-black font-bold">
+              A Framework for Smart CSS
+            </h1>
             <h2 className="text text-gray-600 italic">
-              Lorem Ipsum Conference 2018
+              International Conference on High Performance and Intelligent
+              Computing 2022
             </h2>
             <div className="mt-8 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              ultricies, nisi ac mollis tincidunt, arcu odio tincidunt purus,
-              nec ultricies sapien odio sit amet libero. Nulla facilisi. Nulla
+              Cascading Style sheet (CSS) has been an integral part of all the
+              websites that we visit in our day-to-day life. Thanks to that, we
+              have reached a state of developing masterly crafted websites which
+              are more or less similar to the graphics seen in films. It brings
+              to a point of creating the most optimal and developer-friendly CSS
+              framework. This paper aims to describe the features and discuss
+              the working of such a framework. There are many popular and
+              established libraries that are used by the current frontend
+              developers and this paper compares those libraries towards a
+              better framework.
             </div>
           </div>
           <button className="mt-12 text-black font-mono w-fit pb-1 border-b-black hover:border-b-2 border-dashed">
@@ -176,20 +235,33 @@ const PublicationsSection = () => {
         </div>
         <div className="bg-slate-300 w-full min-h-40 rounded-lg p-8 flex flex-col justify-between">
           <div className="">
-            <h1 className="text-2xl text-black font-bold">Publication 1</h1>
+            <h1 className="text-2xl text-black font-bold">
+              Strike Price Recommendations for NIFTY 50 Index Options
+            </h1>
             <h2 className="text text-gray-600 italic">
-              Lorem Ipsum Conference 2018
+              International Conference for Smart Systems for Electrical ,
+              Electronics, Communication and Computer Engineering 2024
+              <i>(yet ot appear)</i>
             </h2>
             <div className="mt-8 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              ultricies, nisi ac mollis tincidunt, arcu odio tincidunt purus,
-              nec ultricies sapien odio sit amet libero. Nulla facilisi. Nulla
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              ultricies, nisi ac mollis tincidunt, arcu odio tincidunt purus,
-              nec ultricies sapien odio sit amet libero. Nulla facilisi. Nulla
+              The burgeoning complexity and inherent uncertainty of stock market
+              trading strategies, particularly for Index Options, necessitates
+              the need for innovative solutions. Deep learning techniques hold
+              immense promise in navigating this dynamic landscape, offering
+              potent tools for optimizing option selections and strike prices.
+              This project delves into the potential of harnessing a novel
+              Convolutional Neural Network (CNN) architecture to predict optimal
+              price ranges for the NIFTY 50 index, thereby enhancing the
+              effectiveness of index options trading strategies. Drawing upon
+              historical data and rigorous empirical analysis, this study
+              demonstrates the feasibility of this approach, achieving an
+              accuracy rate of 63.22%. Beyond improved forecasting accuracy, the
+              system also provides actionable buy or sell recommendations,
+              empowering investors to navigate the options market with greater
+              confidence and precision.
             </div>
           </div>
-          <button className="mt-12 text-black font-mono w-fit pb-1 border-b-black hover:border-b-2 border-dashed">
+          <button className="box-border mt-12 text-black font-mono w-fit pb-1 hover:border-b-black hover:border-b-2 border-dashed">
             Download PDF
           </button>
         </div>
