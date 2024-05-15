@@ -1,14 +1,61 @@
+"use client"; // This is a client component 👈🏽
+
 import Link from "next/link";
+import { useState } from "react";
 import { FaGithub, FaInstagram, FaLink, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <main>
-      <nav className="bg-white z-30 fixed px-28 flex items-center justify-between w-full space-x-2 py-2 pb-4">
-        <h1 className="font-poppins flex-1 font-extrabold text-3xl text-gray-800">
-          tgashwinkumar<span className="text-gray-600 text-5xl">.</span>{" "}
-        </h1>
-        <ul className="flex space-x-8">
+    <main className="overflow-x-hidden w-screen">
+      <nav className="lg:bg-white z-30 fixed lg:px-28 lg:py-4 flex flex-col lg:flex-row lg:items-center justify-between w-full lg:space-x-2 lg:pb-4">
+        <div
+          className={`flex flex-1 justify-between items-center bg-white py-2 px-4 lg:p-0`}
+        >
+          <h1 className="font-poppins lg:flex-1 font-extrabold text-xl lg:text-3xl text-gray-800">
+            tgashwinkumar
+            <span className="text-gray-600 text-5xl leading-3">.</span>{" "}
+          </h1>
+          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
+            {isOpen ? (
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="black"
+                className="menu w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="black"
+                className="menu w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+        <ul
+          className={`${
+            isOpen
+              ? "[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)] "
+              : "[clip-path:polygon(0%_0%,100%_0%,100%_0%,0%_0%)] lg:[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]"
+          } bg-white px-4 pb-4 lg:pb-0 border-b-gray-200 border-b lg:border-none lg:px-0 lg:bg-transparent shadow-lg z-30 lg:shadow-none transition-all duration-200  lg:pt-0 lg:flex space-y-2 lg:space-y-0 lg:space-x-8`}
+        >
           <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
             About
           </li>
@@ -22,7 +69,7 @@ export default function Home() {
             Resume
           </li>
         </ul>
-        <div className="flex-1 flex items-center justify-end">
+        <div className="flex-1 hidden lg:flex items-center justify-end">
           <button className="px-4 py-2 border rounded-md border-gray-600 text-gray-700 font-semibold">
             Let's Chat
           </button>
@@ -36,7 +83,9 @@ export default function Home() {
         <ResumeSection />
         <div className="h-12"></div>
       </section>
-      <footer className="bg-gray-900 w-full px-24 py-8 text-center">@tgashwinkumar - Last Updated: May 2024</footer>
+      <footer className="bg-gray-900 w-full px-24 py-8 text-center">
+        @tgashwinkumar - Last Updated: May 2024
+      </footer>
     </main>
   );
 }
@@ -163,7 +212,7 @@ const ProjectSection = () => {
       title: "KMap Solver",
       text: "A simple Java Library for handling Karnaugh Maps",
       githubLink: "https://github.com/tgashwinkumar/kmap-solver",
-    }
+    },
   ];
 
   return (
@@ -266,7 +315,7 @@ const PublicationsSection = () => {
             </div>
           </div>
           <Link
-          target="_blank"
+            target="_blank"
             href="/Strike Price Recommendations for NIFTY 50 Index Options IEEE Paper - Unblinded.pdf"
             className="box-border mt-12 text-black font-mono w-fit pb-1 hover:border-b-black hover:border-b-2 border-dashed"
           >
@@ -285,8 +334,10 @@ const ResumeSection = () => {
       <div className="absolute w-full h-full space-x-6 flex flx-col items-center justify-center">
         <h1 className="text-2xl font-bold">Get my resume </h1>
         <Link
-        href="/Resume.pdf"
-         target="_blank" className="bg-white text-black font-semibold text-xl shadow-xl p-2 px-6 rounded-md">
+          href="/Resume.pdf"
+          target="_blank"
+          className="bg-white text-black font-semibold text-xl shadow-xl p-2 px-6 rounded-md"
+        >
           Download
         </Link>
       </div>
