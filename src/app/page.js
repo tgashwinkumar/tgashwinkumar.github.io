@@ -74,18 +74,34 @@ const NavBar = () => {
             : "[clip-path:polygon(0%_0%,100%_0%,100%_0%,0%_0%)] lg:[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]"
         } bg-white px-4 pb-4 lg:pb-0 border-b-gray-200 border-b lg:border-none lg:px-0 lg:bg-transparent shadow-lg z-30 lg:shadow-none transition-all duration-200  lg:pt-0 lg:flex space-y-2 lg:space-y-0 lg:space-x-8`}
       >
-        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+        <Link
+          href="/#about"
+          scroll={true}
+          className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer"
+        >
           About
-        </li>
-        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+        </Link>
+        <Link
+          href="/#projects"
+          scroll={true}
+          className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer"
+        >
           Projects
-        </li>
-        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+        </Link>
+        <Link
+          href="/#publications"
+          scroll={true}
+          className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer"
+        >
           Publications
-        </li>
-        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+        </Link>
+        <Link
+          href="/#resume"
+          scroll={true}
+          className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer"
+        >
           Resume
-        </li>
+        </Link>
       </ul>
       <div className="flex-1 hidden lg:flex items-center justify-end">
         <button className="px-4 py-2 border rounded-md border-gray-600 text-gray-700 font-semibold">
@@ -98,7 +114,7 @@ const NavBar = () => {
 
 const IntroSection = () => {
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-5 w-full gap-4">
+    <div id="about" className="flex flex-col lg:grid lg:grid-cols-5 w-full gap-4">
       <div className="w-full lg:col-span-3 bg-red-400 rounded-xl p-8 py-12 lg:p-12 flex flex-col justify-between">
         <div className="">
           <p className="text-4xl font-bold font-sans text-black">
@@ -224,7 +240,7 @@ const ProjectSection = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:grid grid-cols-4 w-full gap-4 text-black">
+    <div id="projects" className="flex flex-col lg:grid grid-cols-4 w-full gap-4 text-black">
       <h1 className="text-6xl font-extrabold w-full py-4 text-center lg:text-left">Projects.</h1>
       {ProjectsList.map(({ title, text, githubLink, hrefLink }, index) => (
         <div
@@ -259,7 +275,7 @@ const ProjectSection = () => {
 
 const PublicationsSection = () => {
   return (
-    <div className="w-full space-y-4">
+    <div id="publications" className="w-full space-y-4">
       <h1 className="text-6xl text-black font-extrabold w-full py-4 text-center">
         Publications.
       </h1>
@@ -337,7 +353,7 @@ const PublicationsSection = () => {
 
 const ResumeSection = () => {
   return (
-    <div className="relative rounded-lg bg-blue-300 text-black w-full p-8 flex items-center justify-between">
+    <div id="resume" className="relative rounded-lg bg-blue-300 text-black w-full p-8 flex items-center justify-between">
       <div className="absolute h-full [background:linear-gradient(to_right,rgba(147,197,253,0)_0%,rgba(147,197,253,0.9)_20%,rgba(147,197,253,0.9)_80%,rgba(147,197,253,0)_100%)] w-full right-0"></div>
       <div className="relative lg:absolute w-full h-full space-y-4 lg:space-y-0 lg:space-x-6 flex flex-col lg:flex-row items-center justify-center">
         <h1 className="text-2xl font-bold">Get my resume </h1>
