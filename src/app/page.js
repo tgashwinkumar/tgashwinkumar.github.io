@@ -224,8 +224,8 @@ const ProjectSection = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 w-full gap-4 text-black">
-      <h1 className="text-6xl font-extrabold w-full py-4">Projects.</h1>
+    <div className="flex flex-col lg:grid grid-cols-4 w-full gap-4 text-black">
+      <h1 className="text-6xl font-extrabold w-full py-4 text-center lg:text-left">Projects.</h1>
       {ProjectsList.map(({ title, text, githubLink, hrefLink }, index) => (
         <div
           style={{ background: `${ColorsList[index % ColorsList.length]}` }}
@@ -260,10 +260,10 @@ const ProjectSection = () => {
 const PublicationsSection = () => {
   return (
     <div className="w-full space-y-4">
-      <h1 className="text-6xl text-black font-extrabold w-full py-4 text-center ">
+      <h1 className="text-6xl text-black font-extrabold w-full py-4 text-center">
         Publications.
       </h1>
-      <div className="grid grid-cols-2 w-full space-x-4">
+      <div className="flex flex-col lg:grid grid-cols-2 w-full gap-4">
         <div className="bg-slate-300 w-full min-h-40 rounded-lg p-8 flex flex-col justify-between">
           <div className="">
             <h1 className="text-2xl text-black font-bold">
@@ -339,7 +339,7 @@ const ResumeSection = () => {
   return (
     <div className="relative rounded-lg bg-blue-300 text-black w-full p-8 flex items-center justify-between">
       <div className="absolute h-full [background:linear-gradient(to_right,rgba(147,197,253,0)_0%,rgba(147,197,253,0.9)_20%,rgba(147,197,253,0.9)_80%,rgba(147,197,253,0)_100%)] w-full right-0"></div>
-      <div className="absolute w-full h-full space-x-6 flex flx-col items-center justify-center">
+      <div className="relative lg:absolute w-full h-full space-y-4 lg:space-y-0 lg:space-x-6 flex flex-col lg:flex-row items-center justify-center">
         <h1 className="text-2xl font-bold">Get my resume </h1>
         <Link
           href="/Resume.pdf"
@@ -349,7 +349,7 @@ const ResumeSection = () => {
           Download
         </Link>
       </div>
-      <div className="flex flex-wrap gap-y-2 gap-x-3 items-center justify-center w-full">
+      <div className="hidden lg:flex flex-wrap gap-y-2 gap-x-3 items-center justify-center w-full">
         {[
           "Python",
           "C++",
