@@ -5,78 +5,11 @@ import { useState } from "react";
 import { FaGithub, FaInstagram, FaLink, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <main className="overflow-x-hidden w-screen">
-      <nav className="lg:bg-white z-30 fixed lg:px-28 lg:py-4 flex flex-col lg:flex-row lg:items-center justify-between w-full lg:space-x-2 lg:pb-4">
-        <div
-          className={`flex flex-1 justify-between items-center bg-white py-2 px-4 lg:p-0`}
-        >
-          <h1 className="font-poppins lg:flex-1 font-extrabold text-xl lg:text-3xl text-gray-800">
-            tgashwinkumar
-            <span className="text-gray-600 text-5xl leading-3">.</span>{" "}
-          </h1>
-          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
-            {isOpen ? (
-              <svg
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="black"
-                className="menu w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="black"
-                className="menu w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
-        <ul
-          className={`${
-            isOpen
-              ? "[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)] "
-              : "[clip-path:polygon(0%_0%,100%_0%,100%_0%,0%_0%)] lg:[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]"
-          } bg-white px-4 pb-4 lg:pb-0 border-b-gray-200 border-b lg:border-none lg:px-0 lg:bg-transparent shadow-lg z-30 lg:shadow-none transition-all duration-200  lg:pt-0 lg:flex space-y-2 lg:space-y-0 lg:space-x-8`}
-        >
-          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
-            About
-          </li>
-          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
-            Projects
-          </li>
-          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
-            Publications
-          </li>
-          <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
-            Resume
-          </li>
-        </ul>
-        <div className="flex-1 hidden lg:flex items-center justify-end">
-          <button className="px-4 py-2 border rounded-md border-gray-600 text-gray-700 font-semibold">
-            Let's Chat
-          </button>
-        </div>
-      </nav>
-      <section className="font-raleway relative flex min-h-screen flex-col space-y-12 items-center px-24 bg-white">
-        <div className="h-8"></div>
+      <NavBar />
+      <section className="font-raleway relative flex min-h-screen flex-col space-y-12 items-center px-4 w-full lg:px-24 bg-white">
+        <div className="h-4 lg:h-8"></div>
         <IntroSection />
         <ProjectSection />
         <PublicationsSection />
@@ -90,60 +23,135 @@ export default function Home() {
   );
 }
 
+const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="lg:bg-white z-30 fixed lg:px-28 lg:py-4 flex flex-col lg:flex-row lg:items-center justify-between w-full lg:space-x-2 lg:pb-4">
+      <div
+        className={`flex flex-1 justify-between items-center bg-white py-2 px-4 lg:p-0`}
+      >
+        <h1 className="font-poppins lg:flex-1 font-extrabold text-xl lg:text-3xl text-gray-800">
+          tgashwinkumar
+          <span className="text-gray-600 text-5xl leading-3">.</span>{" "}
+        </h1>
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
+          {isOpen ? (
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="black"
+              className="menu w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="black"
+              className="menu w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
+      <ul
+        className={`${
+          isOpen
+            ? "[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)] "
+            : "[clip-path:polygon(0%_0%,100%_0%,100%_0%,0%_0%)] lg:[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]"
+        } bg-white px-4 pb-4 lg:pb-0 border-b-gray-200 border-b lg:border-none lg:px-0 lg:bg-transparent shadow-lg z-30 lg:shadow-none transition-all duration-200  lg:pt-0 lg:flex space-y-2 lg:space-y-0 lg:space-x-8`}
+      >
+        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+          About
+        </li>
+        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+          Projects
+        </li>
+        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+          Publications
+        </li>
+        <li className="text-gray-700 hover:text-gray-500 transition-all cursor-pointer">
+          Resume
+        </li>
+      </ul>
+      <div className="flex-1 hidden lg:flex items-center justify-end">
+        <button className="px-4 py-2 border rounded-md border-gray-600 text-gray-700 font-semibold">
+          Let's Chat
+        </button>
+      </div>
+    </nav>
+  );
+};
+
 const IntroSection = () => {
   return (
-    <div className="grid grid-cols-5 w-full gap-4">
-      <div className="col-span-3 bg-red-400 rounded-xl p-12 flex flex-col">
-        <p className="text-4xl font-bold font-sans text-black">
-          Hey, I'm Ashwin Kumar!
-        </p>
-        <p className="text-xl  text-gray-900 mt-8">
-          I'm a Full Stack Developer and AI enthusiast based in{" "}
-          <i>Madurai, India</i>. Driven by impact and adrenaline, I am always
-          looking for new opportunities to learn and grow. I have worked on
-          numerous projects and internships in the field of AI, Web Development
-          and Blockchain, and I intent to keep the streak going with much more
-          challenges.
-        </p>
-        <div className="flex-1"></div>
-        <div className="grid grid-cols-2 w-full">
-          <div className="">
-            <p className="text-lg text-gray-800">Phone number</p>
-            <p className="text-black text-lg font-semibold">+91 96596 04838</p>
-          </div>
-          <div className="">
-            <p className="text-lg text-gray-800">Email</p>
-            <p className="text-black text-lg font-semibold">
-              tgashwinkumar@gmail.com
-            </p>
-          </div>
+    <div className="flex flex-col lg:grid lg:grid-cols-5 w-full gap-4">
+      <div className="w-full lg:col-span-3 bg-red-400 rounded-xl p-8 py-12 lg:p-12 flex flex-col justify-between">
+        <div className="">
+          <p className="text-4xl font-bold font-sans text-black">
+            Hey, I'm Ashwin Kumar!
+          </p>
+          <p className="text-xl  text-gray-900 mt-8">
+            I'm a Full Stack Developer and AI enthusiast based in{" "}
+            <i>Madurai, India</i>. Driven by impact and adrenaline, I am always
+            looking for new opportunities to learn and grow. I have worked on
+            numerous projects and internships in the field of AI, Web
+            Development and Blockchain, and I intent to keep the streak going
+            with much more challenges.
+          </p>
         </div>
+        {/* <div className="h-12 lg:h-[10vh]"></div> */}
+        <div className="">
+          <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
+            <div className="">
+              <p className="text-lg text-gray-800">Phone number</p>
+              <p className="text-black text-lg font-semibold">
+                +91 96596 04838
+              </p>
+            </div>
+            <div className="">
+              <p className="text-lg text-gray-800">Email</p>
+              <p className="text-black text-lg font-semibold">
+                tgashwinkumar@gmail.com
+              </p>
+            </div>
+          </div>
 
-        <p className="text-lg text-gray-800 py-4">You can also find me at</p>
-        <div className="flex space-x-4 items-center justify-start">
-          <FaLinkedin className="h-8 w-8 text-black" />
-          <FaGithub className="h-8 w-8 text-black" />
-          <FaInstagram className="h-8 w-8 text-black" />
+          <p className="text-lg text-gray-800 py-4">You can also find me at</p>
+          <div className="flex space-x-4 items-center justify-start">
+            <FaLinkedin className="h-8 w-8 text-black" />
+            <FaGithub className="h-8 w-8 text-black" />
+            <FaInstagram className="h-8 w-8 text-black" />
+          </div>
         </div>
       </div>
-      <div className=" relative col-span-2 bg-blue-400 h-[36rem] [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)] rounded-xl flex items-end">
-        <div className="flex flex-col w-full items-center">
-          <p className="italic font-bold text-7xl opacity-100">
-            tgashwinkumar.
-          </p>
-          <p className="italic font-bold text-7xl opacity-90">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-80">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-70">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-60">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-50">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-40">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-30">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-20">tgashwinkumar.</p>
-          <p className="italic font-bold text-7xl opacity-10">tgashwinkumar.</p>
+      <div className="relative w-full lg:col-span-2 bg-blue-400 h-full pt-24 [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)] rounded-xl flex flex-col justify-end">
+        <div className="absolute left-0 right-0 bottom-0 flex flex-col space-y-1 w-full items-center">
+          {Array.from({ length: 10 }, (_, i) => 100 - i * 10).map((oval) => (
+            <p
+              className="italic font-bold text-6xl lg:text-[4.5vw] lg:leading-[4.5vw] opacity-100"
+              style={{ opacity: `${oval / 100}` }}
+            >
+              tgashwinkumar.
+            </p>
+          ))}
         </div>
         <img
           src={"/me.png"}
-          className="absolute left-0 right-0 bottom-0 w-full h-auto filter grayscale drop-shadow-[-8px_0px_8px_rgba(96,_165,_250,_1)]"
+          className="w-full h-auto filter grayscale drop-shadow-[-8px_0px_8px_rgba(96,_165,_250,_1)] "
         />
       </div>
     </div>
